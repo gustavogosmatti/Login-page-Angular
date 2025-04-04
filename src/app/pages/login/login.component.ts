@@ -24,7 +24,8 @@ export class LoginComponent {
       this.authService.login(this.loginForm.value).subscribe({
         next: (response) => {
           console.log('Login bem-sucedido:', response);
-          localStorage.setItem('token', response.access_token);
+          this.authService.saveToken(response.access_token);
+          console.log('Token salvo:', response.access_token);
         },
         error: (error) => {
           console.error('Erro no login:', error);
