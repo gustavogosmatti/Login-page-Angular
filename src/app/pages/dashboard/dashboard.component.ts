@@ -11,11 +11,22 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class DashboardComponent {
   user: any;
+  productsSubmenuVisible: boolean = false;
+  ordersSubmenuVisible: boolean = false;
+
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(){
-
     this.getUser();
+  }
+
+  toggleSubmenu(event: Event, submenu: string) {
+    event.preventDefault();
+    if (submenu === 'products') {
+      this.productsSubmenuVisible = !this.productsSubmenuVisible;
+    } else if (submenu === 'orders') {
+      this.ordersSubmenuVisible = !this.ordersSubmenuVisible;
+    }
   }
 
   logout(): boolean {

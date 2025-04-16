@@ -1,0 +1,78 @@
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin-bottom: 10px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+}
+
+.menu a:hover {
+  background-color: #555;
+}
+
+.submenu {
+  list-style: none;
+  padding-left: 20px;
+  margin: 0;
+  opacity: 0; /* Hide submenu by default */
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, height 0.3s ease;
+}
+
+.submenu.active {
+  opacity: 1;
+  height: auto;
+}
+
+.submenu li {
+  margin-bottom: 5px;
+}
+
+.has-submenu > a {
+  position: relative;
+}
+
+.has-submenu > a .arrow {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+}
+
+.has-submenu > a.active .arrow {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}

@@ -1,3 +1,47 @@
-<p>Bem vindo {{user?.name}} !</p>
-<p>{{user?.email}}</p>
-<button type="submit" (click)="logout()">Sair</button>
+<div class="dashboard-container">
+  <div class="sidebar">
+    <div class="logo">Your Logo</div>
+    <ul class="menu">
+      <li>
+        <a href="#">
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span>Users</span>
+        </a>
+      </li>
+<li class="has-submenu">
+        <a href="#" (click)="toggleSubmenu($event, 'products')">
+          <span>Products</span>
+          <span class="arrow">&#9660;</span>
+        </a>
+        <ul class="submenu" [class.active]="productsSubmenuVisible">
+          <li><a href="#">Add Product</a></li>
+          <li><a href="#">View Products</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="#" (click)="toggleSubmenu($event, 'orders')">
+          <span>Orders</span>
+          <span class="arrow">&#9660;</span>
+        </a>
+        <ul class="submenu" [class.active]="ordersSubmenuVisible">
+          <li><a href="#">New Orders</a></li>
+          <li><a href="#">Pending Orders</a></li>
+          <li><a href="#">Completed Orders</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <span>Settings</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="main-content">
+    <h1>Dashboard</h1>
+    <p>Welcome to the dashboard!</p>
+  </div>
+</div>
